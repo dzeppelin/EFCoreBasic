@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EFCoreBasic": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

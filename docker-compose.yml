@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  # A PSQL instance
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /data/postgres
+    volumes:
+       - ./postgres:/data/postgres
+    ports:
+      - "5430:5432"
+  # Console app application
+  app:
+    image: ${DOCKER_REGISTRY-}efcorebasic
+    build:
+      context: .
+      dockerfile: EFCoreBasic/Dockerfile
